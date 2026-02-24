@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support – MakerFolio</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #f5f5f7;
+      color: #1d1d1f;
+      line-height: 1.7;
+    }
+
+    header {
+      background: #2a7a8a;
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+
+    header img {
+      width: 96px;
+      height: 96px;
+      border-radius: 22px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+    }
+
+    header p.tagline {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.75);
+      margin-top: 6px;
+    }
+
+    main {
+      max-width: 740px;
+      margin: 48px auto;
+      padding: 0 24px 64px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 40px 44px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      margin-bottom: 24px;
+    }
+
+    .card:last-child {
+      margin-bottom: 0;
+    }
+
+    .card-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1d1d1f;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .card-title .icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: #e8f4f6;
+      flex-shrink: 0;
+      font-size: 1.1rem;
+    }
+
+    p {
+      font-size: 0.97rem;
+      color: #3a3a3c;
+    }
+
+    .faq-item {
+      margin-bottom: 24px;
+    }
+
+    .faq-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .faq-item h3 {
+      font-size: 0.97rem;
+      font-weight: 600;
+      color: #1d1d1f;
+      margin-bottom: 6px;
+    }
+
+    .faq-item p {
+      font-size: 0.95rem;
+      color: #3a3a3c;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e5e5ea;
+      margin: 24px 0;
+    }
+
+    a {
+      color: #2a7a8a;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .placeholder-note {
+      display: inline-block;
+      background: #fff9e6;
+      border: 1px solid #f0d080;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 0.88rem;
+      color: #7a6000;
+      margin-top: 10px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #8e8e93;
+      padding-bottom: 40px;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 28px 24px;
+      }
+      header h1 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo.png" alt="MakerFolio logo">
+    <h1>MakerFolio</h1>
+    <p class="tagline">Portfolio App for Makers</p>
+  </header>
+
+  <main>
+
+    <!-- About -->
+    <div class="card">
+      <div class="card-title"><span class="icon">📖</span> About MakerFolio</div>
+      <p>
+        MakerFolio is a portfolio app built for makers, crafters, and builders. Capture and organize
+        your projects with photos, descriptions, materials, time invested, and links — all in one
+        place. Whether you make furniture, leather goods, electronics, or anything in between,
+        MakerFolio helps you document your work and showcase what you've built.
+      </p>
+    </div>
+
+    <!-- FAQ -->
+    <div class="card">
+      <div class="card-title"><span class="icon">❓</span> Frequently Asked Questions</div>
+
+      <div class="faq-item">
+        <h3>Is my data backed up?</h3>
+        <p>
+          Your projects are stored on your device. If you have iCloud enabled, your data will
+          sync automatically across your Apple devices and be included in iCloud backups.
+        </p>
+      </div>
+
+      <hr>
+
+      <div class="faq-item">
+        <h3>Can I share my projects?</h3>
+        <p>
+          Yes. You can export any project as a <code>.makerfolio</code> file and share it via
+          AirDrop, Messages, Mail, or any other sharing method. Recipients who have MakerFolio
+          installed can import it directly.
+        </p>
+      </div>
+
+      <hr>
+
+      <div class="faq-item">
+        <h3>How do I delete a project?</h3>
+        <p>
+          Swipe left on a project in the project list to reveal the Delete button, or open the
+          project and use the Edit menu.
+        </p>
+      </div>
+
+      <hr>
+
+      <div class="faq-item">
+        <h3>Will MakerFolio work on my iPad?</h3>
+        <p>
+          Yes, MakerFolio is a universal app and runs on both iPhone and iPad.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Restore Purchases -->
+    <div class="card">
+      <div class="card-title"><span class="icon">🛒</span> Restoring Purchases</div>
+      <p>
+        If you've previously purchased any premium features and they are no longer active — for
+        example, after reinstalling the app or switching devices — you can restore your purchases
+        at no charge.
+      </p>
+      <br>
+      <p class="placeholder-note">
+        ⚠️ Detailed restore instructions will be added here once in-app purchases are finalized.
+      </p>
+    </div>
+
+    <!-- Contact -->
+    <div class="card">
+      <div class="card-title"><span class="icon">✉️</span> Contact Support</div>
+      <p>
+        Have a question, found a bug, or want to share feedback? We'd love to hear from you.
+        <br><br>
+        <a href="mailto:todd@haddaway.studio">todd@haddaway.studio</a>
+      </p>
+    </div>
+
+  </main>
+
+  <footer>
+    &copy; 2026 Haddaway Studio. All rights reserved.
+    &nbsp;&middot;&nbsp;
+    <a href="privacy-policy.html">Privacy Policy</a>
+    &nbsp;&middot;&nbsp;
+    <a href="terms-of-use.html">Terms of Use</a>
+  </footer>
+
+</body>
+</html>

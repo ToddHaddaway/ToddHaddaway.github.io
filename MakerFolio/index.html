@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MakerFolio – Portfolio App for Makers</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #f5f5f7;
+      color: #1d1d1f;
+      line-height: 1.7;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: #2a7a8a;
+      padding: 72px 24px 64px;
+      text-align: center;
+    }
+
+    .hero img.app-icon {
+      width: 120px;
+      height: 120px;
+      border-radius: 28px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+    }
+
+    .hero p.tagline {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.82);
+      max-width: 520px;
+      margin: 0 auto 32px;
+    }
+
+    /* ── Download button placeholder ── */
+    .download-placeholder {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 2px dashed rgba(255,255,255,0.45);
+      border-radius: 14px;
+      padding: 16px 32px;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.9rem;
+      letter-spacing: 0.3px;
+    }
+
+    .download-placeholder strong {
+      display: block;
+      font-size: 1rem;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+
+    /* ── Main content ── */
+    main {
+      max-width: 800px;
+      margin: 56px auto;
+      padding: 0 24px 72px;
+    }
+
+    /* ── Features ── */
+    .section-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: #2a7a8a;
+      margin-bottom: 16px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 56px;
+    }
+
+    .feature-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 28px 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    }
+
+    .feature-card .icon {
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+    }
+
+    .feature-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1d1d1f;
+      margin-bottom: 6px;
+    }
+
+    .feature-card p {
+      font-size: 0.9rem;
+      color: #6e6e73;
+      line-height: 1.5;
+    }
+
+    /* ── Screenshots ── */
+    .screenshots-section {
+      margin-bottom: 56px;
+    }
+
+    .screenshots-placeholder {
+      background: #ffffff;
+      border-radius: 18px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      padding: 56px 24px;
+      text-align: center;
+      border: 2px dashed #d1d1d6;
+    }
+
+    .screenshots-placeholder .placeholder-icon {
+      font-size: 3rem;
+      margin-bottom: 16px;
+      opacity: 0.4;
+    }
+
+    .screenshots-placeholder p {
+      font-size: 0.95rem;
+      color: #aeaeb2;
+    }
+
+    /* ── Links ── */
+    .links-row {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .link-card {
+      flex: 1;
+      min-width: 180px;
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 28px 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: box-shadow 0.15s ease, transform 0.15s ease;
+    }
+
+    .link-card:hover {
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+
+    .link-card .link-icon {
+      font-size: 1.6rem;
+      flex-shrink: 0;
+    }
+
+    .link-card h3 {
+      font-size: 0.97rem;
+      font-weight: 600;
+      color: #1d1d1f;
+      margin-bottom: 2px;
+    }
+
+    .link-card p {
+      font-size: 0.82rem;
+      color: #aeaeb2;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #8e8e93;
+      padding-bottom: 40px;
+    }
+
+    footer a {
+      color: #2a7a8a;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p.tagline {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <div class="hero">
+    <img class="app-icon" src="logo.png" alt="MakerFolio app icon">
+    <h1>MakerFolio</h1>
+    <p class="tagline">
+      Document your projects, track your time and materials, and build a portfolio
+      of everything you've made.
+    </p>
+    <div class="download-placeholder">
+      <strong>Coming to the App Store</strong>
+      Download link will appear here
+    </div>
+  </div>
+
+  <main>
+
+    <!-- What it does -->
+    <p class="section-label">What it does</p>
+    <div class="features-grid">
+
+      <div class="feature-card">
+        <div class="icon">📁</div>
+        <h3>Organize Your Projects</h3>
+        <p>Keep every project in one place with photos, descriptions, and categories.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon">📸</div>
+        <h3>Photo Documentation</h3>
+        <p>Attach multiple photos to capture your build process from start to finish.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon">⏱️</div>
+        <h3>Track Your Time</h3>
+        <p>Log hours spent on each project and see where your time goes.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon">🔗</div>
+        <h3>Save Links</h3>
+        <p>Attach reference links, tutorials, and resources directly to your projects.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon">📤</div>
+        <h3>Share Your Work</h3>
+        <p>Export and share any project as a file via AirDrop, Messages, or Mail.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon">☁️</div>
+        <h3>iCloud Sync</h3>
+        <p>Your portfolio stays in sync across all your Apple devices automatically.</p>
+      </div>
+
+    </div>
+
+    <!-- Screenshots -->
+    <div class="screenshots-section">
+      <p class="section-label">Screenshots</p>
+      <div class="screenshots-placeholder">
+        <div class="placeholder-icon">🖼️</div>
+        <p>App screenshots will appear here</p>
+      </div>
+    </div>
+
+    <!-- Links -->
+    <p class="section-label">More Info</p>
+    <div class="links-row">
+
+      <a class="link-card" href="privacy-policy.html">
+        <span class="link-icon">🔒</span>
+        <div>
+          <h3>Privacy Policy</h3>
+          <p>How we handle your data</p>
+        </div>
+      </a>
+
+      <a class="link-card" href="support.html">
+        <span class="link-icon">💬</span>
+        <div>
+          <h3>Support</h3>
+          <p>FAQ &amp; contact</p>
+        </div>
+      </a>
+
+      <a class="link-card" href="terms-of-use.html">
+        <span class="link-icon">📄</span>
+        <div>
+          <h3>Terms of Use</h3>
+          <p>Terms &amp; conditions</p>
+        </div>
+      </a>
+
+    </div>
+
+  </main>
+
+  <footer>
+    &copy; 2026 Haddaway Studio. All rights reserved.
+    &nbsp;&middot;&nbsp;
+    <a href="privacy-policy.html">Privacy Policy</a>
+    &nbsp;&middot;&nbsp;
+    <a href="support.html">Support</a>
+    &nbsp;&middot;&nbsp;
+    <a href="terms-of-use.html">Terms of Use</a>
+  </footer>
+
+</body>
+</html>
