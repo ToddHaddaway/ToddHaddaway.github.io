@@ -200,6 +200,22 @@
       user-select: none;
     }
 
+    #lightbox-prev,
+    #lightbox-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 2.5rem;
+      line-height: 1;
+      cursor: pointer;
+      user-select: none;
+      padding: 12px;
+    }
+
+    #lightbox-prev { left: 20px; }
+    #lightbox-next { right: 20px; }
+
     /* ── Footer ── */
     footer {
       text-align: center;
@@ -475,19 +491,31 @@
   <!-- ── Lightbox ── -->
   <div id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
     <span id="lightbox-close" aria-label="Close">&times;</span>
+    <span id="lightbox-prev" aria-label="Previous">&#8249;</span>
     <img id="lightbox-img" src="" alt="">
+    <span id="lightbox-next" aria-label="Next">&#8250;</span>
   </div>
 
   <script>
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
+    let projectImgs = [];
+    let currentIndex = 0;
+
+    function openLightbox(imgs, index) {
+      projectImgs = imgs;
+      currentIndex = index;
+      lightboxImg.src = projectImgs[currentIndex].src;
+      lightboxImg.alt = projectImgs[currentIndex].alt;
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
 
     document.querySelectorAll('.photo-strip img').forEach(img => {
       img.addEventListener('click', () => {
-        lightboxImg.src = img.src;
-        lightboxImg.alt = img.alt;
-        lightbox.classList.add('open');
-        document.body.style.overflow = 'hidden';
+        const strip = img.closest('.photo-strip');
+        const imgs = Array.from(strip.querySelectorAll('img'));
+        openLightbox(imgs, imgs.indexOf(img));
       });
     });
 
@@ -496,9 +524,28 @@
       document.body.style.overflow = '';
     }
 
+    function showPrev() {
+      openLightbox(projectImgs, (currentIndex - 1 + projectImgs.length) % projectImgs.length);
+    }
+
+    function showNext() {
+      openLightbox(projectImgs, (currentIndex + 1) % projectImgs.length);
+    }
+
     lightbox.addEventListener('click', closeLightbox);
     document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+    const prevBtn = document.getElementById('lightbox-prev');
+    const nextBtn = document.getElementById('lightbox-next');
+    prevBtn.addEventListener('click', e => { e.stopPropagation(); showPrev(); });
+    nextBtn.addEventListener('click', e => { e.stopPropagation(); showNext(); });
+
+    document.addEventListener('keydown', e => {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') showPrev();
+      if (e.key === 'ArrowRight') showNext();
+    });
   </script>
 
 </body>
