@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <title>DomiFile – Home Management App</title>
+  <meta name="description" content="DomiFile is the home management app for homeowners who want to stay on top of everything — rooms, appliances, maintenance, contractors, inventory, and more. No subscription. Your data stays on your device.">
+  <link rel="canonical" href="https://toddhaddaway.github.io/DomiFile/">
+  <!-- Open Graph -->
+  <meta property="og:title" content="DomiFile – Home Management App">
+  <meta property="og:description" content="Know your home, inside and out. Track appliances, set maintenance reminders, log contractors, and document every room — all on your device. No account required.">
+  <meta property="og:url" content="https://toddhaddaway.github.io/DomiFile/">
+  <meta property="og:type" content="website">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="DomiFile – Home Management App">
+  <meta name="twitter:description" content="Know your home, inside and out. Track appliances, set maintenance reminders, log contractors, and document every room — all on your device. No account required.">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #f5f5f7;
+      color: #1d1d1f;
+      line-height: 1.7;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: #3D87CC;
+      padding: 72px 24px 64px;
+      text-align: center;
+    }
+
+    .hero img.app-icon {
+      width: 120px;
+      height: 120px;
+      border-radius: 28px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+    }
+
+    .hero p.tagline {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.82);
+      max-width: 560px;
+      margin: 0 auto 32px;
+    }
+
+    /* ── Hero slogan ── */
+    .hero-slogan {
+      display: inline-block;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #ffffff;
+      background: rgba(255,255,255,0.15);
+      border: 1.5px solid rgba(255,255,255,0.35);
+      border-radius: 12px;
+      padding: 10px 22px;
+      margin-bottom: 20px;
+      letter-spacing: -0.2px;
+    }
+
+    /* ── Main content ── */
+    main {
+      max-width: 800px;
+      margin: 56px auto;
+      padding: 0 24px 72px;
+    }
+
+    /* ── Features ── */
+    .section-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: #3D87CC;
+      margin-bottom: 16px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 56px;
+    }
+
+    .feature-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 28px 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    }
+
+    .feature-card .icon {
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+    }
+
+    .feature-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1d1d1f;
+      margin-bottom: 6px;
+    }
+
+    .feature-card p {
+      font-size: 0.9rem;
+      color: #6e6e73;
+      line-height: 1.5;
+    }
+
+    /* ── Screenshots ── */
+    .screenshots-section {
+      margin-bottom: 56px;
+    }
+
+    .screenshots-row {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      padding-bottom: 12px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .screenshots-row::-webkit-scrollbar {
+      display: none;
+    }
+
+    .screenshots-row img {
+      height: 480px;
+      width: auto;
+      border-radius: 18px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+      flex-shrink: 0;
+    }
+
+    /* ── Links ── */
+    .links-row {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .link-card {
+      flex: 1;
+      min-width: 180px;
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 28px 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: box-shadow 0.15s ease, transform 0.15s ease;
+    }
+
+    .link-card:hover {
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+
+    .link-card .link-icon {
+      font-size: 1.6rem;
+      flex-shrink: 0;
+    }
+
+    .link-card h3 {
+      font-size: 0.97rem;
+      font-weight: 600;
+      color: #1d1d1f;
+      margin-bottom: 2px;
+    }
+
+    .link-card p {
+      font-size: 0.82rem;
+      color: #aeaeb2;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #8e8e93;
+      padding-bottom: 40px;
+    }
+
+    footer a {
+      color: #3D87CC;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p.tagline {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <div class="hero">
+    <a href="index.html"><img class="app-icon" src="DomiFile.png" alt="DomiFile app icon"></a>
+    <h1>DomiFile</h1>
+    <p class="hero-slogan">Know your home, inside and out.</p>
+    <p class="tagline">
+      The home management app for homeowners who want to stay on top of everything —
+      without the chaos of scattered notes, lost receipts, and forgotten warranties.
+    </p>
+    <p style="font-size:0.85rem; color:rgba(255,255,255,0.6); margin-bottom:24px;">
+      One-time purchase &nbsp;&middot;&nbsp; No subscriptions &nbsp;&middot;&nbsp; Your data stays on your device
+    </p>
+    <div class="download-placeholder" style="display:inline-block; background:rgba(255,255,255,0.15); border:1.5px solid rgba(255,255,255,0.35); border-radius:12px; padding:12px 28px; color:#ffffff; font-size:0.95rem;">
+      <strong>Coming to the App Store</strong>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- What it does -->
+    <p class="section-label">What it does</p>
+    <div class="features-grid">
+
+      <div class="feature-card">
+        <div class="icon">🏠</div>
+        <h3>Document Every Room</h3>
+        <p>Record paint colors, finishes, and inventory for every room. Touch up a wall or replace a fixture without guessing.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon">🔔</div>
+        <h3>Never Miss Maintenance</h3>
+        <p>Set recurring reminders for furnace filters, gutter cleaning, HVAC service, and more. DomiFile notifies you when tasks are due.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon">🔧</div>
+        <h3>Track Every Appliance</h3>
+        <p>Store model numbers, serial numbers, purchase dates, and warranty expirations. Ready the moment something breaks.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon">👷</div>
+        <h3>Your Contractor List</h3>
+        <p>Save contact info, trade, star ratings, and job history for every plumber, electrician, and service provider you use.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon">📋</div>
+        <h3>Home Inventory</h3>
+        <p>Photograph and document your valuables — electronics, furniture, jewelry — for insurance purposes. Know exactly what you own.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon">🛒</div>
+        <h3>Supplies &amp; Parts</h3>
+        <p>Track filter sizes, bulb specs, and battery types so you always know exactly what to buy before heading to the hardware store.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon">🌿</div>
+        <h3>Yard Log</h3>
+        <p>Record every fertilizer application, mulch delivery, and weed treatment — including dates, quantities, and products used.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon">✅</div>
+        <h3>Seasonal Checklists</h3>
+        <p>Build reusable checklist templates for seasonal tasks, move-in inspections, and storm prep. Spin up a new checklist in seconds.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon">🏘️</div>
+        <h3>Multiple Properties</h3>
+        <p>Manage a primary residence, a rental, and a vacation home all from one app. Switch between properties instantly.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon">📱</div>
+        <h3>iPhone &amp; iPad Native</h3>
+        <p>A clean tab-based layout on iPhone. A full sidebar navigation experience on iPad. Native, intuitive, and easy to browse.</p>
+      </div>
+
+    </div>
+
+    <!-- Screenshots -->
+    <div class="screenshots-section">
+      <p class="section-label">Screenshots</p>
+      <div class="screenshots-row">
+        <img src="IMG_4988.png" alt="DomiFile screenshot 1">
+        <img src="IMG_4989.png" alt="DomiFile screenshot 2">
+        <img src="IMG_4990.png" alt="DomiFile screenshot 3">
+        <img src="IMG_4991.png" alt="DomiFile screenshot 4">
+        <img src="IMG_4992.png" alt="DomiFile screenshot 5">
+      </div>
+    </div>
+
+    <!-- Links -->
+    <p class="section-label">More Info</p>
+    <div class="links-row">
+
+      <a class="link-card" href="privacy-policy.html">
+        <span class="link-icon">🔒</span>
+        <div>
+          <h3>Privacy Policy</h3>
+          <p>How your data is handled</p>
+        </div>
+      </a>
+
+      <a class="link-card" href="support.html">
+        <span class="link-icon">💬</span>
+        <div>
+          <h3>Support</h3>
+          <p>FAQ &amp; contact</p>
+        </div>
+      </a>
+
+      <a class="link-card" href="terms-of-use.html">
+        <span class="link-icon">📄</span>
+        <div>
+          <h3>Terms of Use</h3>
+          <p>Terms &amp; conditions</p>
+        </div>
+      </a>
+
+    </div>
+
+  </main>
+
+  <footer>
+    &copy; 2026 Todd Haddaway. All rights reserved.
+    &nbsp;&middot;&nbsp;
+    <a href="privacy-policy.html">Privacy Policy</a>
+    &nbsp;&middot;&nbsp;
+    <a href="support.html">Support</a>
+    &nbsp;&middot;&nbsp;
+    <a href="terms-of-use.html">Terms of Use</a>
+  </footer>
+
+</body>
+</html>

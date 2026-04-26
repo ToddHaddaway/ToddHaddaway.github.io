@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <title>Support – DomiFile</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #f5f5f7;
+      color: #1d1d1f;
+      line-height: 1.7;
+    }
+
+    header {
+      background: #3D87CC;
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+
+    header img {
+      width: 96px;
+      height: 96px;
+      border-radius: 22px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+    }
+
+    header p.tagline {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.75);
+      margin-top: 6px;
+    }
+
+    main {
+      max-width: 740px;
+      margin: 48px auto;
+      padding: 0 24px 64px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 40px 44px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      margin-bottom: 24px;
+    }
+
+    .card:last-child {
+      margin-bottom: 0;
+    }
+
+    .card-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1d1d1f;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .card-title .icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: #e8f0fa;
+      flex-shrink: 0;
+      font-size: 1.1rem;
+    }
+
+    p {
+      font-size: 0.97rem;
+      color: #3a3a3c;
+    }
+
+    .faq-item {
+      margin-bottom: 24px;
+    }
+
+    .faq-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .faq-item h3 {
+      font-size: 0.97rem;
+      font-weight: 600;
+      color: #1d1d1f;
+      margin-bottom: 6px;
+    }
+
+    .faq-item p {
+      font-size: 0.95rem;
+      color: #3a3a3c;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e5e5ea;
+      margin: 24px 0;
+    }
+
+    a {
+      color: #3D87CC;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #8e8e93;
+      padding-bottom: 40px;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 28px 24px;
+      }
+      header h1 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html"><img src="DomiFile.png" alt="DomiFile logo"></a>
+    <h1>DomiFile</h1>
+    <p class="tagline">Home Management App</p>
+  </header>
+
+  <main>
+
+    <!-- About -->
+    <div class="card">
+      <div class="card-title"><span class="icon">🏠</span> About DomiFile</div>
+      <p>
+        DomiFile is a home management app built for homeowners who want to stay on top of everything
+        &mdash; without the chaos of scattered notes, lost receipts, and forgotten warranties. Document
+        every room, track appliances and warranties, set maintenance reminders, log contractors, manage
+        a home inventory, and more. All your home's information, in one place, on your device.
+      </p>
+    </div>
+
+    <!-- FAQ -->
+    <div class="card">
+      <div class="card-title"><span class="icon">❓</span> Frequently Asked Questions</div>
+
+      <div class="faq-item">
+        <h3>How much does DomiFile cost?</h3>
+        <p>
+          DomiFile is a one-time purchase &mdash; no subscriptions, no in-app purchases. Pay once
+          and you get full, unlimited access to every feature, forever.
+        </p>
+      </div>
+
+      <hr>
+
+      <div class="faq-item">
+        <h3>What iPhone or iPad do I need?</h3>
+        <p>
+          DomiFile requires iOS 17 or later. It's a universal app and runs on both iPhone and iPad.
+          On iPhone it uses a clean tab-based layout; on iPad it becomes a full sidebar navigation
+          experience.
+        </p>
+      </div>
+
+      <hr>
+
+      <div class="faq-item">
+        <h3>Is my data backed up?</h3>
+        <p>
+          Your data is stored locally on your device and backed up as part of your normal iPhone
+          backup &mdash; whether that&rsquo;s an iCloud backup or a backup via Finder on your Mac.
+          Restoring from backup will bring all your DomiFile data with it. DomiFile does not
+          currently sync across multiple Apple devices simultaneously.
+        </p>
+      </div>
+
+      <hr>
+
+      <div class="faq-item">
+        <h3>Can I manage more than one property?</h3>
+        <p>
+          Yes. DomiFile supports multiple properties &mdash; a primary residence, a rental, a
+          vacation home &mdash; all from one app. Switch between properties instantly.
+        </p>
+      </div>
+
+      <hr>
+
+      <div class="faq-item">
+        <h3>Does DomiFile send my data anywhere?</h3>
+        <p>
+          No. Everything in DomiFile is stored locally on your device. No account is required,
+          no subscription, and no data is sent to the cloud or any third party.
+        </p>
+      </div>
+
+      <hr>
+
+      <div class="faq-item">
+        <h3>Can I use DomiFile on my iPad?</h3>
+        <p>
+          Yes. DomiFile is a universal app and runs natively on both iPhone and iPad, with a
+          full sidebar navigation layout optimized for the larger screen.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Contact -->
+    <div class="card">
+      <div class="card-title"><span class="icon">✉️</span> Contact Support</div>
+      <p>
+        Have a question, found a bug, or want to share feedback? I'd love to hear from you.
+        <br><br>
+        <a href="mailto:support@haddawaystudio.com">support@haddawaystudio.com</a>
+      </p>
+    </div>
+
+  </main>
+
+  <footer>
+    &copy; 2026 Todd Haddaway. All rights reserved.
+    &nbsp;&middot;&nbsp;
+    <a href="privacy-policy.html">Privacy Policy</a>
+    &nbsp;&middot;&nbsp;
+    <a href="terms-of-use.html">Terms of Use</a>
+  </footer>
+
+</body>
+</html>
