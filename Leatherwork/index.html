@@ -169,6 +169,55 @@
       margin-bottom: 10px;
     }
 
+    /* ── Collapsible Category ── */
+    .category-block > summary {
+      list-style: none;
+      cursor: pointer;
+    }
+
+    .category-block > summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .category-block > summary .category-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 0;
+      transition: color 0.15s ease;
+    }
+
+    .category-block > summary:hover .category-title {
+      color: #2a7a8a;
+    }
+
+    .category-block > summary:focus-visible .category-title {
+      outline: 2px solid #2a7a8a;
+      outline-offset: 4px;
+    }
+
+    .chev {
+      display: inline-block;
+      font-size: 0.75em;
+      color: #2a7a8a;
+      transition: transform 0.2s ease;
+    }
+
+    .category-block[open] > summary .chev {
+      transform: rotate(90deg);
+    }
+
+    .category-count {
+      margin-left: auto;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #8e8e93;
+    }
+
+    .category-block > .projects {
+      margin-top: 24px;
+    }
+
     /* ── Empty State ── */
     .empty-state {
       color: #aeaeb2;
@@ -282,8 +331,11 @@
          and paste it before the closing </div> tag.
          ════════════════════════════════════════════ -->
     <section class="category" id="bags">
-      <h2 class="category-title">Bags</h2>
-      <div class="projects">
+      <details class="category-block" open>
+        <summary>
+          <h2 class="category-title"><span class="chev">&#9656;</span>Bags<span class="category-count">6 projects</span></h2>
+        </summary>
+        <div class="projects">
 
         <!-- ── PROJECT: Tote Bag w/Indonesian Batik Lining ── -->
         <div class="project-card">
@@ -376,14 +428,18 @@
         ── END ADD ── -->
 
       </div>
+      </details>
     </section>
 
     <!-- ════════════════════════════════════════════
          CATEGORY: CIGAR CASES
          ════════════════════════════════════════════ -->
     <section class="category" id="cigar-cases">
-      <h2 class="category-title">Cigar Cases</h2>
-      <div class="projects">
+      <details class="category-block">
+        <summary>
+          <h2 class="category-title"><span class="chev">&#9656;</span>Cigar Cases<span class="category-count">3 projects</span></h2>
+        </summary>
+        <div class="projects">
 
         <!-- ── PROJECT: Three-Stick Cigar Case in Buttero Leather ── -->
         <div class="project-card">
@@ -438,14 +494,18 @@
         ── END ADD ── -->
 
       </div>
+      </details>
     </section>
 
     <!-- ════════════════════════════════════════════
          CATEGORY: EMS GEAR
          ════════════════════════════════════════════ -->
     <section class="category" id="ems-gear">
-      <h2 class="category-title">EMS Gear</h2>
-      <div class="projects">
+      <details class="category-block">
+        <summary>
+          <h2 class="category-title"><span class="chev">&#9656;</span>EMS Gear<span class="category-count">1 project</span></h2>
+        </summary>
+        <div class="projects">
 
         <!-- ── PROJECT: Firefighter / EMS Radio Strap & Holster ── -->
         <div class="project-card">
@@ -475,14 +535,18 @@
         ── END ADD ── -->
 
       </div>
+      </details>
     </section>
 
     <!-- ════════════════════════════════════════════
          CATEGORY: WALLETS
          ════════════════════════════════════════════ -->
     <section class="category" id="wallets">
-      <h2 class="category-title">Wallets</h2>
-      <div class="projects">
+      <details class="category-block">
+        <summary>
+          <h2 class="category-title"><span class="chev">&#9656;</span>Wallets<span class="category-count">2 projects</span></h2>
+        </summary>
+        <div class="projects">
 
         <!-- ── PROJECT: The Gentleman ── -->
         <div class="project-card">
@@ -529,14 +593,18 @@
         ── END ADD ── -->
 
       </div>
+      </details>
     </section>
 
     <!-- ════════════════════════════════════════════
          CATEGORY: MISC
          ════════════════════════════════════════════ -->
     <section class="category" id="misc">
-      <h2 class="category-title">Misc</h2>
-      <div class="projects">
+      <details class="category-block">
+        <summary>
+          <h2 class="category-title"><span class="chev">&#9656;</span>Misc<span class="category-count">1 project</span></h2>
+        </summary>
+        <div class="projects">
 
         <!-- ── PROJECT: Valet Tray in Minerva Vacchetta Leather ── -->
         <div class="project-card">
@@ -564,6 +632,7 @@
         ── END ADD ── -->
 
       </div>
+      </details>
     </section>
 
     <!-- ════════════════════════════════════════════
@@ -638,6 +707,20 @@
       if (e.key === 'ArrowLeft') showPrev();
       if (e.key === 'ArrowRight') showNext();
     });
+
+    /* ── Open a collapsed category when linked by anchor ── */
+    function revealHash() {
+      const id = (location.hash || '').replace('#', '');
+      if (!id) return;
+      const section = document.getElementById(id);
+      if (!section) return;
+      const block = section.querySelector('.category-block');
+      if (block) block.open = true;
+      section.scrollIntoView();
+    }
+
+    window.addEventListener('hashchange', revealHash);
+    revealHash();
   </script>
 
 </body>
